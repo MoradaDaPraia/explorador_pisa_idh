@@ -58,6 +58,20 @@ const renderizarGrafico = () => {
             xanchor: 'right',
             y: 0,
         },
+        margin: {
+            l: 0,
+            r: 0,
+            t: 0,
+            b: 0,
+        },
+        xaxis: {
+            ticklabelposition: "inside",
+            ticks: "inside"
+        },
+        yaxis: {
+            ticklabelposition: "inside",
+            ticks: "inside"
+        }
     };
 
     Plotly.newPlot('grafico', traces, layout, { responsive: true });
@@ -113,10 +127,7 @@ const main = () => {
     dados.dataset.forEach((item) =>  {
         dados.paises[item.country_code] = item.country_name;
     });
-
-    elementos.botaoAdicionarNovaLinha.addEventListener('click', () => {
-        adicionarSelecao(); 
-    });
+    elementos.botaoAdicionarNovaLinha.addEventListener('click', adicionarSelecao);
 
     renderizarGrafico();
 };
