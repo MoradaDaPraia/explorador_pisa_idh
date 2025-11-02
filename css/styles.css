@@ -1,0 +1,159 @@
+:root {
+    font-size: 62.5%;
+
+    --background-primary: #ffffff;
+    --background-secondary: #0033ff;
+
+    --text-primary: #000000;
+    --text-secondary: var(--background-primary);
+
+    --border-primary: #c6c6c6;
+
+    --danger: #ff1500;
+}
+
+* {
+    font-family: "Inter", sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 1.6rem;
+
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+#cabecalho {
+    padding: 1rem;
+    border-bottom: 0.4rem solid var(--border-primary);
+}
+
+#cabecalho > h1 {
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+main #selecoes {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem; 
+    border-right: 0.4rem solid var(--border-primary);
+
+    width: 60rem;
+}
+
+main #selecoes h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+main #selecoes .selecao {
+    width: 100%;  
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 0.3rem solid var(--border-primary);
+    margin: 1rem 0;
+}
+
+main #selecoes .selecao label {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+main #selecoes .selecao label select {
+    background-color: var(--background-primary);
+    border: 0.2rem solid var(--border-primary);
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+main #selecoes .selecao .remover {
+    border: 0.2rem solid var(--danger); 
+    color: var(--danger);
+    padding: 0.2rem;
+    margin: 0.6rem 0 0.3rem 0;
+}
+
+main #selecoes #adicionar {
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 45rem;
+    align-self: center;
+}
+
+main #grafico {
+    width: 100%;
+}
+
+@media (max-width: 1080px) {
+    :root {
+        font-size: 57%;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    main #selecoes {
+        border-right: none;
+        border-top: 0.4rem solid var(--border-primary);
+        width: 100%;
+        height: 70%;
+        overflow: scroll;
+    }
+
+    main #selecoes #selecoesContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 2rem;
+    }
+    
+    main #grafico {
+        height: 100%;
+    }
+}
+
+@media (max-width: 970px) {
+    main #selecoes #selecoesContainer {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media (max-width: 660px) {
+    main #selecoes #selecoesContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 470px) {
+    :root {
+        font-size: 50%;
+    }
+}
