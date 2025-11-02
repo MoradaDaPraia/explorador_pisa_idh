@@ -49,8 +49,9 @@ button {
 }
 
 main {
+    flex: 1;
+    min-height: 0;
     display: flex;
-    height: 100%;
 }
 
 main #selecoes {
@@ -58,8 +59,9 @@ main #selecoes {
     flex-direction: column;
     padding: 2rem; 
     border-right: 0.4rem solid var(--border-primary);
-
     width: 60rem;
+    overflow: scroll;
+    height: auto;
 }
 
 main #selecoes h2 {
@@ -125,7 +127,6 @@ main #grafico {
         border-top: 0.4rem solid var(--border-primary);
         width: 100%;
         height: 70%;
-        overflow: scroll;
     }
 
     main #selecoes #selecoesContainer {
