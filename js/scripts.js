@@ -4,7 +4,7 @@ const elementos = {
 };
 
 const dados = {
-    paises: {},
+    paises: { ALB: 'Albânia', DEU: 'Alemanha', SAU: 'Arábia Saudita', DZA: 'Argélia', ARG: 'Argentina', AUS: 'Austrália', AUT: 'Áustria', AZE: 'Azerbaijão', BEL: 'Bélgica', BLR: 'Bielorrússia', BIH: 'Bósnia e Herzegovina', BRA: 'Brasil', BRN: 'Brunei', BGR: 'Bulgária', KHM: 'Camboja', CAN: 'Canadá', QAT: 'Catar', KAZ: 'Cazaquistão', CHL: 'Chile', CHN: 'China', CYP: 'Chipre', COL: 'Colômbia', KOR: 'Coreia do Sul', CRI: 'Costa Rica', HRV: 'Croácia', DNK: 'Dinamarca', SLV: 'El Salvador', ARE: 'Emirados Árabes Unidos', SVK: 'Eslováquia', SVN: 'Eslovênia', ESP: 'Espanha', USA: 'Estados Unidos', EST: 'Estônia', PHL: 'Filipinas', FIN: 'Finlândia', FRA: 'França', GEO: 'Geórgia', GRC: 'Grécia', GTM: 'Guatemala', HKG: 'Hong Kong', HUN: 'Hungria', IDN: 'Indonésia', IRL: 'Irlanda', ISL: 'Islândia', ISR: 'Israel', ITA: 'Itália', JAM: 'Jamaica', JPN: 'Japão', JOR: 'Jordânia', XKX: 'Kosovo', LVA: 'Letônia', LBN: 'Líbano', LTU: 'Lituânia', LUX: 'Luxemburgo', MAC: 'Macau', MKD: 'Macedônia', MYS: 'Malásia', MLT: 'Malta', MAR: 'Marrocos', ECD: 'Média Internacional (OCDE)', MEX: 'México', MDA: 'Moldávia', MNG: 'Mongólia', MNE: 'Montenegro', NOR: 'Noruega', NZL: 'Nova Zelândia', NLD: 'Países Baixos', PSE: 'Palestina', PAN: 'Panamá', PRY: 'Paraguai', PER: 'Peru', POL: 'Polônia', PRT: 'Portugal', GBR: 'Reino Unido', DOM: 'República Dominicana', CZE: 'República Tcheca', ROU: 'Romênia', RUS: 'Rússia', SRB: 'Sérvia', SGP: 'Singapura', SWE: 'Suécia', CHE: 'Suíça', THA: 'Tailândia', TWN: 'Taiwan', TTO: 'Trindade e Tobago', TUN: 'Tunísia', TUR: 'Turquia', UKR: 'Ucrânia', URY: 'Uruguai', UZB: 'Uzbequistão', VNM: 'Vietnã' },
     indicadores: {
         expected_schooling_years: "Anos Esperados na Escola",
         human_development_index: "Índice de Desenvolvimento Humano",
@@ -54,9 +54,9 @@ const renderizarGrafico = () => {
     const layout = {
         showlegend: true,
         legend: {
-            x: 1,
-            xanchor: 'right',
-            y: 0,
+            x: 0,
+            xanchor: 'left',
+            y: 1,
         },
         margin: {
             l: 0,
@@ -124,9 +124,6 @@ const adicionarSelecao = () => {
 };
 
 const main = () => {
-    dados.dataset.forEach((item) =>  {
-        dados.paises[item.country_code] = item.country_name;
-    });
     elementos.botaoAdicionarNovaLinha.addEventListener('click', adicionarSelecao);
 
     renderizarGrafico();
